@@ -1,118 +1,441 @@
-# Origin UI
+# Otto UI
 
-**Beautiful UI components built with Tailwind CSS and React.**
+![Screenshot of Otto UI](/public/readme.png)
 
-Origin UI is an extensive collection of copy-and-paste components for quickly building app UIs. It includes hundreds of components and is constantly updated with new designs.
+<div align="center">
 
-**Demo** → [https://originui.com](https://originui.com)
+![Next.js Badge](https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=fff&style=flat)
+![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
+![Motion Badge](https://img.shields.io/badge/Motion-ECD53F?style=flat)
 
-![Origin UI](https://github.com/user-attachments/assets/a6428743-1628-4498-8b45-7000e30bdc24)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fpheralb%2Fsvgl%2Fbadge%3Fref%3Dmain&style=flat)](https://actions-badge.atrox.dev/educlopez/smoothui/goto?ref=main)
+![GitHub stars](https://img.shields.io/github/stars/educlopez/ottoui)
+![GitHub issues](https://img.shields.io/github/issues/educlopez/ottoui)
+![GitHub forks](https://img.shields.io/github/forks/educlopez/ottoui)
+![GitHub PRs](https://img.shields.io/github/issues-pr/educlopez/ottoui)
+[![Website](https://img.shields.io/badge/website-ottoui.dev-blue)](https://ottoui.dev)
 
-## Getting Started
+</div>
 
-Origin UI is designed to integrate seamlessly with Next.js projects, but the components are also compatible with any React-based project. The components follow shadcn conventions, so they'll feel familiar to anyone who has used shadcn before.
+Otto UI is a collection of beautifully designed components with smooth animations built with React, Tailwind CSS, and Motion. This project aims to provide developers with a set of reusable UI components that enhance user experience through delightful animations and modern design patterns.
 
-**1. Set up the required files:**
+## Table of Contents
 
-- Copy all `.tsx` files from Origin UI's `registry/default/ui` folder to your project's `components/ui` folder.
-- Copy `utils.ts` from Origin UI's `registry/default/lib` folder to your project's `lib` folder.
+- [Otto UI](#otto-ui)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Quick Start](#quick-start)
+  - [Installation](#installation)
+    - [Using shadcn CLI v3 (Recommended)](#using-shadcn-cli-v3-recommended)
+    - [Manual Installation](#manual-installation)
+  - [Usage](#usage)
+  - [Available Components](#available-components)
+  - [Registry System](#registry-system)
+  - [MCP Support](#mcp-support)
+  - [Troubleshooting](#troubleshooting)
+  - [Contributing](#contributing)
+  - [License](#license)
 
-Note: If you're using shadcn, you may likely already have these files - however, I would recommend using our components over shadcn's for a consistent styling experience.
+## Features
 
-**2. Add the following CSS variables to your stylesheet (you don't need to overwrite them if you already have them):**
+- **Modern Design System**: A cohesive and contemporary design language with a new mascot called Otto
+- **Smooth Animations**: Built-in animations powered by Motion for delightful user experiences
+- **Responsive Design**: Fully responsive components designed with Tailwind CSS
+- **Dark Mode Support**: Components support both light and dark themes out of the box
+- **Color Customization**: Dynamic color switcher for easy theme customization
+- **Documentation**: Comprehensive documentation with props, examples, and usage guidelines
+- **Accessibility**: Enhanced accessibility features across all components
+- **TypeScript Support**: Full TypeScript support with type definitions
+- **Easy Integration**: Simple API for integrating components into your projects
+- **shadcn CLI v3 Support**: Full compatibility with the new shadcn CLI v3 namespace system
 
-```
-:root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.21 0.006 285.885);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
-  --destructive: oklch(0.637 0.237 25.331);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.871 0.006 286.286);
-  --ring: oklch(0.871 0.006 286.286);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.21 0.006 285.885);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.871 0.006 286.286);
-}
+## Quick Start
 
-.dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.141 0.005 285.823);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.141 0.005 285.823);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.21 0.006 285.885);
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.21 0.006 285.885);
-  --muted-foreground: oklch(0.65 0.01 286);
-  --accent: oklch(0.21 0.006 285.885);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.274 0.006 286.033);
-  --input: oklch(0.274 0.006 286.033);
-  --ring: oklch(0.442 0.017 285.786);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.274 0.006 286.033);
-  --sidebar-ring: oklch(0.442 0.017 285.786);
+Get started with Otto UI in just a few steps:
+
+1. **Add the registry** to your `components.json`:
+
+```json
+{
+  "registries": {
+    "@ottoui": "https://ottoui.dev/r/{name}.json"
+  }
 }
 ```
 
-After completing these steps, you can copy and use the components in your project. Note that some components (e.g., number inputs, date pickers, time pickers, phone number inputs) may require additional libraries.
-
-## Tailwind v4 support
-
-Our UI library has been updated to Tailwind CSS v4 as of February 25, 2025. Legacy components built with v3 remain available by adding `/legacy/` to the component URL:
+2. **Install a component**:
 
 ```bash
-# v3 legacy component
-pnpm dlx shadcn@latest add https://originui.com/r/legacy/comp-01.json
+npx shadcn@latest add @ottoui/siri-orb
 ```
 
-Note: New components will only be developed for Tailwind v4.
+3. **Use the component**:
+
+```tsx
+import { SiriOrb } from "@/components/ottoui/ui/SiriOrb"
+
+export default function App() {
+  return <SiriOrb size="200px" />
+}
+```
+
+## Installation
+
+### Using shadcn CLI v3 (Recommended)
+
+Otto UI is fully compatible with the new shadcn CLI v3 namespace system. This is the easiest way to install and manage Otto UI components.
+
+#### Step 1: Configure the Registry
+
+Add the Otto UI registry to your `components.json` file:
+
+```json
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "tailwind.config.js",
+    "css": "src/app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui"
+  },
+  "registries": {
+    "@ottoui": "https://ottoui.dev/r/{name}.json"
+  }
+}
+```
+
+#### Step 2: Install Components
+
+Install components using the namespace:
+
+```bash
+# Install a single component
+npx shadcn@latest add @ottoui/siri-orb
+
+# Install multiple components
+npx shadcn@latest add @ottoui/rich-popover @ottoui/animated-input
+
+# Install components with dependencies
+npx shadcn@latest add @ottoui/scrollable-card-stack
+```
+
+#### Step 3: Use Components
+
+Import and use the installed components:
+
+```tsx
+import { RichPopover } from "@/components/ottoui/ui/RichPopover"
+import { SiriOrb } from "@/components/ottoui/ui/SiriOrb"
+
+export default function App() {
+  return (
+    <div>
+      <SiriOrb size="200px" />
+      <RichPopover />
+    </div>
+  )
+}
+```
+
+#### Available Commands
+
+```bash
+# View all available components
+npx shadcn@latest search @ottoui
+
+# View component details before installation
+npx shadcn@latest view @ottoui/siri-orb
+
+# Install components
+npx shadcn@latest add @ottoui/component-name
+```
+
+### Manual Installation
+
+If you prefer to install components manually, you can copy the component files directly:
+
+1. **Install dependencies**:
+
+```bash
+pnpm add motion tailwindcss lucide-react clsx tailwind-merge
+```
+
+2. **Copy component files** from the [components directory](src/components/ottoui/ui/)
+
+3. **Set up utilities**:
+
+```bash
+# Create lib/utils/cn.ts
+mkdir -p lib/utils
+```
+
+```tsx
+// lib/utils/cn.ts
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+```
+
+## Usage
+
+### Basic Usage
+
+```tsx
+import { SiriOrb } from "@/components/ottoui/ui/SiriOrb"
+
+export default function App() {
+  return (
+    <div className="flex min-h-screen items-center justify-center">
+      <SiriOrb
+        size="200px"
+        colors={{
+          bg: "oklch(95% 0.02 264.695)",
+          c1: "oklch(75% 0.15 350)",
+          c2: "oklch(80% 0.12 200)",
+          c3: "oklch(78% 0.14 280)",
+        }}
+        animationDuration={20}
+      />
+    </div>
+  )
+}
+```
+
+### Advanced Usage
+
+```tsx
+import { RichPopover } from "@/components/ottoui/ui/RichPopover"
+import { ScrollableCardStack } from "@/components/ottoui/ui/ScrollableCardStack"
+
+export default function Dashboard() {
+  const cards = [
+    {
+      id: "1",
+      name: "John Doe",
+      handle: "@johndoe",
+      avatar: "/avatars/john.jpg",
+      video: "/videos/john.mp4",
+      href: "https://twitter.com/johndoe",
+    },
+    // ... more cards
+  ]
+
+  return (
+    <div className="space-y-8">
+      <RichPopover />
+      <ScrollableCardStack items={cards} />
+    </div>
+  )
+}
+```
+
+## Available Components
+
+Otto UI includes a wide variety of components:
+
+### UI Components
+
+- **SiriOrb** - Animated orb with smooth color transitions
+- **RichPopover** - Advanced popover with rich content
+- **ScrollableCardStack** - Interactive card stack with smooth scrolling
+- **AnimatedInput** - Input field with smooth animations
+- **DynamicIsland** - iOS-style dynamic island component
+- **FluidMorph** - Fluid morphing animations
+- **MatrixCard** - Matrix-style card with particle effects
+
+### Interactive Components
+
+- **CursorFollow** - Custom cursor following component
+- **ScrambleHover** - Text scramble effect on hover
+- **WaveText** - Animated wave text effect
+- **TypewriterText** - Typewriter text animation
+
+### Layout Components
+
+- **ExpandableCards** - Expandable card layout
+- **ScrollableCardStack** - Stack of scrollable cards
+- **AppDownloadStack** - App download showcase
+
+### Utility Components
+
+- **ButtonCopy** - Copy button with feedback
+- **ClipCornersButton** - Button with clipped corners
+- **DotMorphButton** - Button with morphing dot animation
+
+[View all components →](https://ottoui.dev)
+
+## MCP Support
+
+Otto UI is fully compatible with the **shadcn MCP server**, enabling AI assistants to discover and install components automatically.
+
+### 🤖 AI Assistant Integration
+
+With MCP support, AI assistants like **Claude**, **Cursor**, and **GitHub Copilot** can:
+
+- **Discover Components**: Browse all available Otto UI components
+- **Install Components**: Automatically install components with dependencies
+- **Provide Usage Examples**: Get code examples and integration help
+- **Smart Suggestions**: Receive intelligent component recommendations
+
+### Quick MCP Setup
+
+1. **Configure your registry** in `components.json`:
+
+```json
+{
+  "registries": {
+    "@ottoui": "https://ottoui.dev/r/{name}.json"
+  }
+}
+```
+
+2. **Install MCP server**:
+
+```bash
+npx shadcn@latest mcp init --client claude
+# or for Cursor: npx shadcn@latest mcp init --client cursor
+# or for VS Code: npx shadcn@latest mcp init --client vscode
+```
+
+3. **Try these prompts**:
+
+- "Show me the components in the ottoui registry"
+- "Install the SiriOrb component from ottoui"
+- "Create a landing page using ottoui components"
+
+[Learn more about MCP support →](https://ottoui.dev/doc/mcp)
+
+## Registry System
+
+Otto UI uses a custom registry system compatible with shadcn CLI v3. Each component includes:
+
+### Automatic Dependencies
+
+- **Package Dependencies**: Required npm packages are automatically included
+- **Utility Files**: Shared utilities like `cn` are automatically bundled
+- **Import Paths**: All import paths are automatically resolved
+
+### Component Structure
+
+When you install a component, you get:
+
+```
+components/ottoui/ui/
+├── ComponentName.tsx    # Main component file
+lib/utils/
+└── cn.ts               # Utility functions (if needed)
+```
+
+### Registry Features
+
+- **Self-contained**: Each component includes all necessary dependencies
+- **Type-safe**: Full TypeScript support with proper types
+- **Optimized**: Components are optimized for performance
+- **Accessible**: Built-in accessibility features
+
+## Troubleshooting
+
+### Common Issues
+
+#### 1. Authentication Error (401)
+
+**Error**: `You are not authorized to access the item`
+
+**Solution**: This usually happens with Vercel preview deployments. Use the production URL:
+
+```json
+{
+  "registries": {
+    "@ottoui": "https://ottoui.dev/r/{name}.json"
+  }
+}
+```
+
+#### 2. Registry Not Found
+
+**Error**: `The item at https://smoothui.dev/r/registry.json was not found`
+
+**Solution**: The search command might not work as expected. Install components directly:
+
+```bash
+npx shadcn@latest add @ottoui/siri-orb
+```
+
+#### 3. Import Path Issues
+
+**Error**: `Cannot find module '@/lib/utils/cn'`
+
+**Solution**: Make sure your `tsconfig.json` includes the path alias:
+
+```json
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
+
+#### 4. Missing Dependencies
+
+**Error**: `Cannot find module 'clsx'`
+
+**Solution**: Install missing dependencies:
+
+```bash
+pnpm add clsx tailwind-merge motion
+```
+
+### Getting Help
+
+- **Documentation**: Visit [smoothui.dev](https://smoothui.dev) for detailed documentation
+- **Issues**: Report bugs on [GitHub Issues](https://github.com/educlopez/smoothui/issues)
+- **Discussions**: Join discussions on [GitHub Discussions](https://github.com/educlopez/smoothui/discussions)
 
 ## Contributing
 
-We welcome contributions to Origin UI! Please read our [contributing guidelines](CONTRIBUTING.md) on how to submit improvements and new components.
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Development Setup
+
+1. **Clone the repository**:
+
+```bash
+git clone https://github.com/educlopez/ottoui.git
+cd ottoui
+```
+
+2. **Install dependencies**:
+
+```bash
+pnpm install
+```
+
+3. **Start development server**:
+
+```bash
+pnpm dev
+```
+
+4. **Build registry**:
+
+```bash
+pnpm run build:registry
+```
 
 ## License
 
-Licensed under the [MIT License](https://github.com/origin-space/originui/blob/main/LICENSE.md).
-
-If you have any questions or just want to say hi, feel free to reach out to us on X 👉 [@pacovitiello](https://x.com/pacovitiello) & [@DavidePacilio](https://x.com/DavidePacilio).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

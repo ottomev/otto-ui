@@ -1,61 +1,97 @@
-# Contributing
+# Contributing to Otto UI
 
-We welcome contributions to our project! Please follow these steps to contribute:
+Thank you for your interest in contributing to Otto UI! This guide will help you get started with the process of contributing to the project.
 
-1. Fork the repository on GitHub.
+## Table of Contents
 
-2. Clone your forked repository to your local machine:
+- [Contributing to Otto UI](#contributing-to-smoothui)
+  - [Table of Contents](#table-of-contents)
+  - [Forking the Repository](#forking-the-repository)
+  - [Setting Up Your Development Environment](#setting-up-your-development-environment)
+  - [Adding New Components](#adding-new-components)
+  - [Submitting Your Changes](#submitting-your-changes)
+  - [Code Style and Best Practices](#code-style-and-best-practices)
+  - [Additional Resources](#additional-resources)
 
-   ```
-   git clone https://github.com/your-username/originui.git
-   ```
+## Forking the Repository
 
-3. Navigate to the project directory:
+1. **Go to the Otto UI GitHub Repository**: Navigate to the [Otto UI GitHub repository](https://github.com/educlopez/ottoui).
 
-   ```
-   cd originui
-   ```
+2. **Fork the Repository**: Click the "Fork" button in the top right corner of the page. This will create a copy of the repository under your GitHub account.
 
-4. Create a new branch for your feature or bug fix:
+3. **Clone Your Fork**: Open your terminal and run the following command to clone your forked repository to your local machine:
 
-   ```
-   git checkout -b your-branch-name
-   ```
-
-5. Install the project dependencies:
-
-   ```
-   pnpm install
+   ```bash
+   git clone https://github.com/yourusername/smoothui.git
    ```
 
-6. Make your changes to the codebase.
-
-7. Before building, format your code:
-
-   ```
-   pnpm run format
+4. **Navigate to the Project Directory**:
+   ```bash
+   cd ottoui
    ```
 
-8. Build the project:
+## Setting Up Your Development Environment
 
+1. **Install Dependencies**: Make sure you have Node.js and npm installed. Then, run the following command to install the project dependencies:
+
+   ```bash
+   npm install
    ```
-   pnpm run build
+
+2. **Run the Development Server**: Start the development server to see the project in action:
+
+   ```bash
+   npm run dev
    ```
 
-9. Test the application to ensure your changes work as expected.
+3. **Open the Project**: Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the project.
 
-10. Commit your changes:
+## Adding New Components
 
-    ```
-    git commit -m "Your descriptive commit message"
-    ```
+1. **Create a New Component**: In the `src/components/smoothui/ui/` directory, create a new file for your component. Use a descriptive name for the file, e.g., `MyNewComponent.tsx`.
 
-11. Push your changes to your fork:
+2. **Implement Your Component**: Write your component code using React and TypeScript. Make sure to follow the existing structure and conventions used in the project.
 
-    ```
-    git push origin your-branch-name
-    ```
+3. **Export Your Component**: Ensure that your component is exported properly. For example:
 
-12. Open a pull request on the original repository.
+   ```typescript
+   const MyNewComponent = () => {
+     return <div>Hello, Otto UI!</div>;
+   };
 
-Thank you for contributing to our project!
+   export default MyNewComponent;
+   ```
+
+4. **Update the Components Data**: If your component needs to be included in the components list, update the `src/app/doc/data.ts` file to add your component's information.
+
+## Submitting Your Changes
+
+1. **Commit Your Changes**: After making your changes, commit them with a descriptive message:
+
+   ```bash
+   git add .
+   git commit -m "Add MyNewComponent"
+   ```
+
+2. **Push Your Changes**: Push your changes to your forked repository:
+
+   ```bash
+   git push origin main
+   ```
+
+3. **Create a Pull Request**: Go to the original Otto UI repository on GitHub and click on the "Pull Requests" tab. Click the "New Pull Request" button and select your forked repository and branch. Provide a clear description of your changes and submit the pull request.
+
+## Code Style and Best Practices
+
+- **Follow the Existing Code Style**: Ensure that your code follows the existing style and conventions used in the project.
+- **Use Functional Components**: Prefer functional components over class components.
+- **TypeScript**: Use TypeScript for all new components and prefer interfaces over types.
+- **Testing**: If applicable, write tests for your new components.
+
+## Additional Resources
+
+- [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- [Next.js Documentation](https://nextjs.org/docs)
+
+Thank you for contributing to Otto UI! We appreciate your help in making this project better. If you have any questions, feel free to reach out to the maintainers.
