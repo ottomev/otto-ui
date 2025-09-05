@@ -8,7 +8,7 @@ export default function ScrollableCardStackDemo() {
       id: "siriorb",
       name: "Edu Calvo",
       handle: "@educalvolpz",
-      avatar: "https://github.com/educlopez.png",
+      avatar: "https://github.com/ottomev.png",
       video:
         "https://res.cloudinary.com/dyzxnud9z/video/upload/ottoui/siriorb.mp4",
       href: "https://x.com/educalvolpz",
@@ -17,7 +17,7 @@ export default function ScrollableCardStackDemo() {
       id: "richpopover",
       name: "Edu Calvo",
       handle: "@educalvolpz",
-      avatar: "https://github.com/educlopez.png",
+      avatar: "https://github.com/ottomev.png",
       video:
         "https://res.cloudinary.com/dyzxnud9z/video/upload/ottoui/richpopover.mp4",
       href: "https://x.com/educalvolpz",
@@ -26,7 +26,7 @@ export default function ScrollableCardStackDemo() {
       id: "sparkbites",
       name: "Edu Calvo",
       handle: "@educalvolpz",
-      avatar: "https://github.com/educlopez.png",
+      avatar: "https://github.com/ottomev.png",
       video:
         "https://res.cloudinary.com/dyzxnud9z/video/upload/ottoui/sparkbites.mp4",
       href: "https://x.com/educalvolpz",

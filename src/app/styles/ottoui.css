@@ -58,7 +58,7 @@
   --color-brand-light: oklch(0.78 0.15 352.53);
   --color-brand-lighter: oklch(0.85 0.1 352.53);
   --color-smooth-50: oklch(99.11% 0 0);
-  --color-smooth-100: oklch(97.91% 0 0);
+  --color-smooth-100: oklch(5.88% 0 0);
   --color-smooth-200: oklch(96.42% 0 0);
   --color-smooth-300: oklch(94.61% 0 0);
   --color-smooth-400: oklch(93.1% 0 0);
@@ -77,7 +77,7 @@
 
 .dark {
   --color-smooth-50: oklch(5.7% 0 0);
-  --color-smooth-100: oklch(6.5% 0 0);
+  --color-smooth-100: oklch(5.88% 0 0);
   --color-smooth-200: oklch(25.62% 0 0);
   --color-smooth-300: oklch(27.68% 0 0);
   --color-smooth-400: oklch(30.12% 0 0);

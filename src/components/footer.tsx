@@ -77,7 +77,7 @@ export default function Footer() {
           Made by
         </span>
         <img
-          src="https://github.com/educlopez.png"
+          src="https://github.com/ottomev.png"
           alt="Org Avatar of Ottolabs Tech"
           width={32}
           height={32}

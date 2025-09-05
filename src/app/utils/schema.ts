@@ -13,7 +13,7 @@ export const ottoUISchema = {
     "@type": "Person",
     name: "Eduardo Calvo",
     url: "https://educalvolopez.com/",
-    image: "https://github.com/educlopez.png",
+    image: "https://github.com/ottomev.png",
     sameAs: [
       "https://www.linkedin.com/in/educlopez/",
       "https://github.com/educlopez",

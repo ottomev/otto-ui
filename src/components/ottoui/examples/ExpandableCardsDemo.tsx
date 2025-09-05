@@ -15,7 +15,7 @@ const demoCards: Card[] = [
     author: {
       name: "Zé Manuel",
       role: "Fundador, Summer Opening",
-      image: "https://github.com/educlopez.png",
+      image: "https://github.com/ottomev.png",
     },
   },
   {
@@ -28,7 +28,7 @@ const demoCards: Card[] = [
     author: {
       name: "Maria Silva",
       role: "Fashion Curator",
-      image: "https://github.com/educlopez.png",
+      image: "https://github.com/ottomev.png",
     },
   },
   {
@@ -41,7 +41,7 @@ const demoCards: Card[] = [
     author: {
       name: "João Santos",
       role: "Gallery Director",
-      image: "https://github.com/educlopez.png",
+      image: "https://github.com/ottomev.png",
     },
   },
   {
@@ -54,7 +54,7 @@ const demoCards: Card[] = [
     author: {
       name: "Ana Rodrigues",
       role: "Dream Interpreter",
-      image: "https://github.com/educlopez.png",
+      image: "https://github.com/ottomev.png",
     },
   },
 ]

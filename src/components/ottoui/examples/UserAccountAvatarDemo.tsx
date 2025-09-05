@@ -10,7 +10,7 @@ import UserAccountAvatar, {
 const demoUser: UserData = {
   name: "Jane Doe",
   email: "jane@example.com",
-  avatar: "https://github.com/educlopez.png",
+  avatar: "https://github.com/ottomev.png",
 }
 
 const demoOrders: Order[] = [

@@ -51,7 +51,7 @@ export function HeroShowcase({
     rating: 5.0,
     avatars: [
       {
-        src: "https://github.com/educlopez.png",
+        src: "https://github.com/ottomev.png",
         alt: "Avatar 1",
       },
       {

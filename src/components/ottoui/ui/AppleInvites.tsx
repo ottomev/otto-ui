@@ -29,7 +29,7 @@ const defaultEvents: Event[] = [
     image:
       "https://images.unsplash.com/photo-1593164842264-854604db2260?=jpg&fit=crop&w=640&q=80&fit=max",
     badge: "Hosting",
-    participants: [{ avatar: "https://github.com/educlopez.png" }],
+    participants: [{ avatar: "https://github.com/ottomev.png" }],
   },
   {
     id: 2,
@@ -39,7 +39,7 @@ const defaultEvents: Event[] = [
     image:
       "https://images.unsplash.com/photo-1524293568345-75d62c3664f7?=jpg&fit=crop&w=640&q=80&fit=max",
     badge: "Going",
-    participants: [{ avatar: "https://github.com/educlopez.png" }],
+    participants: [{ avatar: "https://github.com/ottomev.png" }],
   },
   {
     id: 3,
@@ -49,7 +49,7 @@ const defaultEvents: Event[] = [
     image:
       "https://images.unsplash.com/photo-1592919505780-303950717480?=jpg&fit=crop&w=640&q=80&fit=max",
     badge: "Going",
-    participants: [{ avatar: "https://github.com/educlopez.png" }],
+    participants: [{ avatar: "https://github.com/ottomev.png" }],
   },
   {
     id: 4,
@@ -59,7 +59,7 @@ const defaultEvents: Event[] = [
     image:
       "https://images.unsplash.com/photo-1571947453052-1e72ce0d19b9?=jpg&fit=crop&w=640&q=80&fit=max",
     badge: "Interested",
-    participants: [{ avatar: "https://github.com/educlopez.png" }],
+    participants: [{ avatar: "https://github.com/ottomev.png" }],
   },
 ]
 

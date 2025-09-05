@@ -9,7 +9,7 @@ const Header = () => {
   const isMobile = useIsMobile()
   return (
     <nav
-      className="sticky top-0 right-0 left-0 z-30 flex items-center justify-between px-4 py-1 md:py-3"
+      className="sticky top-0 right-0 left-0 z-30 flex items-center justify-between px-2 md:px-4 py-1 md:py-3"
       aria-label="Main navigation"
     >
       {isMobile && (
@@ -22,10 +22,10 @@ const Header = () => {
           height="76px"
         />
       )}
-      <div className="z-3 flex flex-1 items-center gap-4">
+      <div className="z-3 flex flex-1 items-center gap-2 lg:gap-4">
         <CustomTrigger />
-        <div className="my-3 flex flex-row items-center justify-center gap-2 px-0 py-1 lg:hidden">
-          <Logo classNameIcon="w-5" />
+        <div className="my-2 md:my-3 flex flex-row items-center justify-center gap-2 px-0 py-1 lg:hidden">
+          <Logo classNameIcon="w-16 scale-170" />
         </div>
       </div>
     </nav>
