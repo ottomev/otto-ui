@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-flow-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/NumberFlowDemo.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport NumberFlow from \"@/components/ottoui/ui/NumberFlow\"\n\nconst NumberFlowDemo = () => {\n  const [value, setValue] = useState(0)\n  return <NumberFlow value={value} onChange={setValue} />\n}\n\nexport default NumberFlowDemo\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/NumberFlowDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/number-flow"
+  ]
+}

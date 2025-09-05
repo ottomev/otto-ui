@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-input",
+  "type": "registry:ui",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "ottoui/AnimatedInput.tsx",
+      "content": "import { useRef, useState } from \"react\"\nimport { motion } from \"motion/react\"\n\nconst SPRING = {\n  type: \"spring\",\n  // Damping controls how quickly the spring comes to rest (higher = less oscillation)\n  damping: 10,\n  // Mass affects the weight of the spring (higher = slower, heavier motion)\n  mass: 0.75,\n  // Stiffness controls the tension of the spring (higher = snappier, lower = softer)\n  stiffness: 100,\n}\n\nconst LABEL_TRANSITION = {\n  duration: 0.28,\n  ease: [0.4, 0, 0.2, 1], // standard material easing\n}\n\nexport interface AnimatedInputProps {\n  value?: string\n  defaultValue?: string\n  onChange?: (value: string) => void\n  label: string\n  placeholder?: string\n  disabled?: boolean\n  className?: string\n  inputClassName?: string\n  labelClassName?: string\n  icon?: React.ReactNode\n}\n\nexport default function AnimatedInput({\n  value,\n  defaultValue = \"\",\n  onChange,\n  label,\n  placeholder = \"\",\n  disabled = false,\n  className = \"\",\n  inputClassName = \"\",\n  labelClassName = \"\",\n  icon,\n}: AnimatedInputProps) {\n  const [internalValue, setInternalValue] = useState(defaultValue)\n  const isControlled = value !== undefined\n  const val = isControlled ? value : internalValue\n  const inputRef = useRef<HTMLInputElement>(null)\n  const [isFocused, setIsFocused] = useState(false)\n  const isFloating = !!val || isFocused\n\n  return (\n    <div className={`relative flex items-center ${className}`}>\n      {icon && (\n        <span className=\"absolute top-1/2 left-3 -translate-y-1/2\">{icon}</span>\n      )}\n      <input\n        ref={inputRef}\n        type=\"text\"\n        value={val}\n        onChange={(e) => {\n          if (!isControlled) setInternalValue(e.target.value)\n          onChange?.(e.target.value)\n        }}\n        placeholder={isFloating ? placeholder : \"\"}\n        disabled={disabled}\n        className={`peer focus:ring-primary bg-background w-full rounded-sm border px-3 py-2 text-sm transition outline-none focus:ring-1 ${icon ? \"pl-10\" : \"\"} ${inputClassName}`}\n        onFocus={() => setIsFocused(true)}\n        onBlur={() => setIsFocused(false)}\n      />\n      <motion.label\n        className={`bg-background text-foreground pointer-events-none absolute top-1/2 left-3 origin-left -translate-y-1/2 rounded-sm border border-transparent px-1 transition-all ${labelClassName}`}\n        animate={\n          isFloating\n            ? {\n                y: -24,\n                scale: 0.85,\n                color: \"var(--color-brand)\",\n                borderColor: \"var(--color-brand)\",\n              }\n            : { y: 0, scale: 1, color: \"#6b7280\" }\n        }\n        transition={LABEL_TRANSITION}\n        style={{\n          zIndex: 2,\n        }}\n      >\n        {label}\n      </motion.label>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/ottoui/ui/AnimatedInput.tsx"
+    }
+  ]
+}

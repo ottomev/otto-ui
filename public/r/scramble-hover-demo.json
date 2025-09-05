@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scramble-hover-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/ScrambleHoverDemo.tsx",
+      "content": "\"use client\"\n\nimport ScrambleHover from \"@/components/ottoui/ui/ScrambleHover\"\n\nexport default function ScrambleHoverDemo() {\n  return (\n    <div className=\"relative max-w-md space-y-6\">\n      <div>\n        <ScrambleHover>Hover over this text!</ScrambleHover>\n        <div>\n          <ScrambleHover\n            duration={1200}\n            speed={50}\n            className=\"text-brand font-mono text-lg\"\n          >\n            Custom duration and speed example\n          </ScrambleHover>\n        </div>\n        <div>\n          <ScrambleHover className=\"text-2xl font-semibold\">\n            Try me too!\n          </ScrambleHover>\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/ScrambleHoverDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/scramble-hover"
+  ]
+}

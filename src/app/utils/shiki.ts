@@ -1,4 +1,4 @@
-import { createHighlighter, type Highlighter } from "shiki"
+import { createHighlighter, type Highlighter, type LanguageInput } from "shiki"
 
 let highlighterPromise: Promise<Highlighter> | null = null
 
@@ -12,7 +12,7 @@ async function getHighlighter(lang: string) {
   const highlighter = await highlighterPromise
   // Optionally, load additional languages if needed
   if (!highlighter.getLoadedLanguages().includes(lang)) {
-    await highlighter.loadLanguage(lang as any)
+    await highlighter.loadLanguage(lang as unknown as LanguageInput)
   }
   return highlighter
 }

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-progress-bar",
+  "type": "registry:ui",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "ottoui/AnimatedProgressBar.tsx",
+      "content": "import { motion } from \"motion/react\"\n\nexport interface AnimatedProgressBarProps {\n  value: number // 0-100\n  label?: string\n  color?: string\n  className?: string\n  barClassName?: string\n  labelClassName?: string\n  /**\n   * To replay the animation, change the React 'key' prop on this component from the parent.\n   */\n}\n\nconst SPRING = {\n  type: \"spring\",\n  damping: 10,\n  mass: 0.75,\n  stiffness: 100,\n}\n\nexport default function AnimatedProgressBar({\n  value,\n  label,\n  color = \"#6366f1\",\n  className = \"\",\n  barClassName = \"\",\n  labelClassName = \"\",\n}: AnimatedProgressBarProps) {\n  return (\n    <div className={`w-full ${className}`}>\n      {label && (\n        <div className={`mb-1 text-sm font-medium ${labelClassName}`}>\n          {label}\n        </div>\n      )}\n      <div className=\"bg-background relative h-3 w-full overflow-hidden rounded border\">\n        <motion.div\n          className={`bg-background h-full rounded ${barClassName}`}\n          style={{ backgroundColor: color }}\n          initial={{ width: 0 }}\n          animate={{ width: `${Math.max(0, Math.min(100, value))}%` }}\n          transition={SPRING}\n        />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/ottoui/ui/AnimatedProgressBar.tsx"
+    }
+  ]
+}

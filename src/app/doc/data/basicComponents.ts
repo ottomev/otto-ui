@@ -244,6 +244,7 @@ export const basicComponents: ComponentsProps[] = [
     tags: ["react", "tailwindcss", "motion"],
     href: "https://x.com/educalvolpz",
     info: "A text input with a floating label and smooth animation.",
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     componentUi: require("@/components/ottoui/examples/AnimatedInputDemo")
       .default,
     download: "motion lucide-react",
@@ -325,6 +326,7 @@ export const basicComponents: ComponentsProps[] = [
     href: "https://x.com/educalvolpz",
     info: "A progress bar with a smooth fill animation and optional label.",
     componentUi:
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       require("@/components/ottoui/examples/AnimatedProgressBarDemo").default,
     download: "motion",
     cnFunction: false,

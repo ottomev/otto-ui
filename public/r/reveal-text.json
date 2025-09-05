@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "reveal-text",
+  "type": "registry:ui",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "ottoui/RevealText.tsx",
+      "content": "import React from \"react\"\nimport { motion, useInView } from \"motion/react\"\n\ninterface RevealTextProps {\n  children: string\n  direction?: \"up\" | \"down\" | \"left\" | \"right\"\n  delay?: number\n  triggerOnView?: boolean\n  className?: string\n}\n\nconst directionVariants = {\n  up: { y: 24, opacity: 0 },\n  down: { y: -24, opacity: 0 },\n  left: { x: 24, opacity: 0 },\n  right: { x: -24, opacity: 0 },\n}\n\nconst RevealText: React.FC<RevealTextProps> = ({\n  children,\n  direction = \"up\",\n  delay = 0,\n  triggerOnView = false,\n  className = \"\",\n}) => {\n  const ref = React.useRef<HTMLSpanElement>(null)\n  const inView = useInView(ref, { once: true })\n  const animate = !triggerOnView || inView\n\n  return (\n    <motion.span\n      ref={ref}\n      className={className}\n      initial={directionVariants[direction]}\n      animate={animate ? { x: 0, y: 0, opacity: 1 } : undefined}\n      transition={{ duration: 0.6, delay: delay / 1000 }}\n      style={{ display: \"inline-block\" }}\n    >\n      {children}\n    </motion.span>\n  )\n}\n\nexport default RevealText\n",
+      "type": "registry:ui",
+      "target": "components/ottoui/ui/RevealText.tsx"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "basic-modal-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/BasicModalDemo.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport BasicModal from \"@/components/ottoui/ui/BasicModal\"\n\nconst ModalDemo = () => {\n  const [isOpen, setIsOpen] = useState(false)\n\n  return (\n    <div className=\"flex flex-col gap-4 p-8\">\n      <button\n        onClick={() => setIsOpen(true)}\n        className=\"bg-background cursor-pointer rounded-md border p-3 shadow-xs\"\n      >\n        Open Modal\n      </button>\n\n      <BasicModal\n        isOpen={isOpen}\n        onClose={() => setIsOpen(false)}\n        title=\"Beautiful Modal\"\n        size=\"md\"\n      >\n        <div className=\"flex flex-col gap-4\">\n          <p>\n            This is a beautiful animated modal with smooth entrance and exit\n            animations. Click outside or press Escape to close.\n          </p>\n          <div className=\"flex flex-col gap-2\">\n            <h4 className=\"font-medium\">Features:</h4>\n            <ul className=\"list-inside list-disc space-y-1\">\n              <li>Smooth animations</li>\n              <li>Backdrop blur effect</li>\n              <li>Responsive design</li>\n              <li>Keyboard navigation (ESC to close)</li>\n            </ul>\n          </div>\n          <div className=\"mt-4 flex justify-end gap-2\">\n            <button\n              onClick={() => setIsOpen(false)}\n              className=\"hover:bg-secondary rounded-lg border px-4 py-2 transition-colors\"\n            >\n              Cancel\n            </button>\n            <button\n              onClick={() => setIsOpen(false)}\n              className=\"bg-brand hover:bg-brand-secondary rounded-lg px-4 py-2 text-white transition-colors\"\n            >\n              Confirm\n            </button>\n          </div>\n        </div>\n      </BasicModal>\n    </div>\n  )\n}\n\nexport default ModalDemo\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/BasicModalDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/basic-modal"
+  ]
+}

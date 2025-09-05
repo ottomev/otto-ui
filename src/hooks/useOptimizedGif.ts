@@ -37,7 +37,15 @@ export function useOptimizedGif({
       ).matches
 
       // Check if device is on a slow connection
-      const connection = (navigator as any).connection
+      interface NavigatorConnection {
+        effectiveType?: string
+      }
+      interface NavigatorWithConnection extends Navigator {
+        connection?: NavigatorConnection
+        deviceMemory?: number
+      }
+      const navWithConnection = navigator as NavigatorWithConnection
+      const connection = navWithConnection.connection
       const isSlowConnection =
         connection &&
         (connection.effectiveType === "slow-2g" ||
@@ -46,7 +54,7 @@ export function useOptimizedGif({
 
       // Check if device has limited memory
       const hasLimitedMemory =
-        (navigator as any).deviceMemory && (navigator as any).deviceMemory < 4
+        navWithConnection.deviceMemory && navWithConnection.deviceMemory < 4
 
       setShouldLoad(
         enableMotion &&

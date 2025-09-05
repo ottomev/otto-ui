@@ -1,9 +1,7 @@
-// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const fs = require("fs")
-// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const path = require("path")
-
-// @ts-ignore
 const baseDir = path.join(__dirname, "..", "..")
 console.log("baseDir", baseDir)
 const registryJsonPath = path.join(baseDir, "public", "index.json")
@@ -29,7 +27,14 @@ function getSourceContent(filePath: string): string {
   }
 }
 
-function getSourceFilePath(file: any, baseDir: string): string {
+type RegistryType = "registry:ui" | "registry:block" | "registry:hook" | "registry:lib" | "registry:theme"
+
+interface RegistryFile {
+  path: string
+  type: RegistryType
+}
+
+function getSourceFilePath(file: RegistryFile, baseDir: string): string {
   let sourceFilePath = ""
 
   if (file.type === "registry:ui") {
@@ -76,8 +81,33 @@ function getSourceFilePath(file: any, baseDir: string): string {
   return sourceFilePath
 }
 
-function processRegistryItem(name: string, item: any) {
-  const output: any = {
+interface RegistryItem {
+  type: RegistryType
+  dependencies?: string[]
+  files: RegistryFile[]
+  registryDependencies?: string[]
+  devDependencies?: string[]
+  tailwind?: unknown
+}
+
+interface OutputItem {
+  $schema: string
+  name: string
+  type: RegistryType
+  dependencies: string[]
+  files: Array<{
+    path: string
+    content: string
+    type?: RegistryType
+    target?: string
+  }>
+  registryDependencies?: string[]
+  devDependencies?: string[]
+  tailwind?: unknown
+}
+
+function processRegistryItem(name: string, item: RegistryItem): OutputItem {
+  const output: OutputItem = {
     $schema: "https://ui.shadcn.com/schema/registry-item.json",
     name,
     type: item.type,
@@ -87,7 +117,7 @@ function processRegistryItem(name: string, item: any) {
 
   // Check if any files import the cn utility
   let needsCnUtility = false
-  item.files.forEach((file: any) => {
+  item.files.forEach((file) => {
     const sourceFilePath = getSourceFilePath(file, baseDir)
     if (sourceFilePath) {
       const content = getSourceContent(sourceFilePath)
@@ -145,12 +175,15 @@ function processRegistryItem(name: string, item: any) {
   }
 
   // Add tailwind config if it exists
-  if (item.tailwind && Object.keys(item.tailwind.config || {}).length > 0) {
-    output.tailwind = item.tailwind
+  if (item.tailwind && typeof item.tailwind === 'object' && 'config' in item.tailwind) {
+    const tailwindConfig = item.tailwind as { config?: Record<string, unknown> }
+    if (tailwindConfig.config && Object.keys(tailwindConfig.config).length > 0) {
+      output.tailwind = item.tailwind
+    }
   }
 
   // Process each file in the registry item
-  item.files.forEach((file: any) => {
+  item.files.forEach((file) => {
     let sourceFilePath: string = ""
 
     // Skip files from _helpers folder
@@ -290,8 +323,8 @@ function buildSourceFiles() {
   const registry = JSON.parse(fs.readFileSync(registryJsonPath, "utf-8"))
 
   // Process each item in the registry
-  Object.entries(registry).forEach(([name, item]: [string, any]) => {
-    const sourceFile = processRegistryItem(name, item)
+  Object.entries(registry).forEach(([name, item]) => {
+    const sourceFile = processRegistryItem(name, item as RegistryItem)
 
     // Write all items to the registry directory
     const outputPath = path.join(registryOutputDir, `${name}.json`)

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "job-listing-component-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/JobListingComponentDemo.tsx",
+      "content": "import React from \"react\"\n\nimport JobListingComponent, {\n  Job,\n  Resend,\n  Supabase,\n  Turso,\n} from \"@/components/ottoui/ui/JobListingComponent\"\n\nconst jobs: Job[] = [\n  {\n    company: \"Supabase\",\n    title: \"I/UX Designer\",\n    logo: <Supabase />,\n    job_description:\n      \"We are looking for a creative and driven UI/UX Designer to join our team. You will be responsible for designing and implementing user interfaces for our web and mobile applications.\",\n    salary: \"$85,000 - $95,000\",\n    location: \"San Francisco, CA\",\n    remote: \"No\",\n    job_time: \"Full-time\",\n  },\n  {\n    company: \"Resend\",\n    title: \"UI Developer\",\n    logo: <Resend className=\"fill-black dark:fill-white\" />,\n    job_description:\n      \"Seeking an experienced UI Developer to work on our latest project. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, and a keen eye for detail.\",\n    salary: \"$75,000 - $85,000\",\n    location: \"Remote\",\n    remote: \"Yes\",\n    job_time: \"Contract\",\n  },\n  {\n    company: \"Turso\",\n    title: \"Graphic Designer\",\n    logo: <Turso />,\n    job_description:\n      \"We are in search of a talented Graphic Designer with UI experience to help create stunning visuals for our clients. This role involves collaboration with the design team and clients to deliver high-quality work.\",\n    salary: \"$60,000 - $70,000\",\n    location: \"New York, NY\",\n    remote: \"Hybrid\",\n    job_time: \"Part-time\",\n  },\n]\n\nconst JobListingComponentDemo = () => <JobListingComponent jobs={jobs} />\n\nexport default JobListingComponentDemo\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/JobListingComponentDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/job-listing-component"
+  ]
+}

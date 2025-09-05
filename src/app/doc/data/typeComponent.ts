@@ -20,7 +20,7 @@ export interface ComponentsProps {
     description: string
     required: boolean
     fields?: { name: string; type: string; description: string }[]
-    default?: any
+    default?: string | number | boolean | object
   }[]
   hasRefreshDemo?: boolean
   icon?: string

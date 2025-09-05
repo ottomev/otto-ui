@@ -1,0 +1,7 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-cursor-position",
+  "type": "registry:hook",
+  "dependencies": [],
+  "files": []
+}

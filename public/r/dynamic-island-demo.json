@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dynamic-island-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/DynamicIslandDemo.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport DynamicIsland, {\n  DynamicIslandProps,\n} from \"@/components/ottoui/ui/DynamicIsland\"\n\nconst DynamicIslandDemo = () => {\n  const [view, setView] = useState<DynamicIslandProps[\"view\"]>(\"idle\")\n\n  return <DynamicIsland view={view} onViewChange={setView} />\n}\n\nexport default DynamicIslandDemo\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/DynamicIslandDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/dynamic-island"
+  ]
+}

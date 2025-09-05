@@ -53,8 +53,8 @@ function generateColorVariations(baseColor: string) {
     const max = Math.max(r, g, b)
     const min = Math.min(r, g, b)
     let h: number,
-      s: number,
-      l = (max + min) / 2
+      s: number
+    const l = (max + min) / 2
 
     if (max === min) {
       h = s = 0
@@ -184,7 +184,9 @@ export function ColorPickerFloatNav() {
   const [open, setOpen] = useState(false)
   const [candy, setCandy] = useState("")
   const [candySecondary, setCandySecondary] = useState("")
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [originalCandy, setOriginalCandy] = useState("")
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [originalCandySecondary, setOriginalCandySecondary] = useState("")
   const pickerRef = useRef<HTMLDivElement>(null)
 

@@ -1028,6 +1028,7 @@ export const components: ComponentsProps[] = [
     tags: ["react", "motion", "tailwindcss", "radix-ui"],
     href: "https://x.com/educalvolpz",
     info: "A configurable tabbed photo display component with animated tab transitions, supporting custom icons and images",
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     componentUi: require("@/components/ottoui/examples/PhototabDemo").default,
     download: "motion lucide-react @radix-ui/react-tabs",
     cnFunction: false,

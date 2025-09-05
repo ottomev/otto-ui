@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "wave-text",
+  "type": "registry:ui",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "ottoui/WaveText.tsx",
+      "content": "import React from \"react\"\nimport { motion } from \"motion/react\"\n\ninterface WaveTextProps {\n  children: string\n  amplitude?: number\n  speed?: number\n  className?: string\n}\n\nconst WaveText: React.FC<WaveTextProps> = ({\n  children,\n  amplitude = 8,\n  speed = 0.3,\n  className = \"\",\n}) => {\n  return (\n    <span className={className} style={{ display: \"inline-block\" }}>\n      {children.split(\"\").map((char, i) => (\n        <motion.span\n          key={i}\n          style={{ display: \"inline-block\" }}\n          animate={{ y: [0, -amplitude, 0] }}\n          transition={{\n            repeat: Infinity,\n            duration: speed * children.length,\n            delay: i * speed,\n            ease: \"easeInOut\",\n          }}\n        >\n          {char === \" \" ? \"\\u00A0\" : char}\n        </motion.span>\n      ))}\n    </span>\n  )\n}\n\nexport default WaveText\n",
+      "type": "registry:ui",
+      "target": "components/ottoui/ui/WaveText.tsx"
+    }
+  ]
+}

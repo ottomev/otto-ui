@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "power-off-slide-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/PowerOffSlideDemo.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport PowerOffSlide from \"@/components/ottoui/ui/PowerOffSlide\"\n\nconst PowerOffSlideDemo = () => {\n  const [poweredOff, setPoweredOff] = useState(false)\n\n  return (\n    <div className=\"flex flex-col items-center gap-4\">\n      <PowerOffSlide\n        label=\"Slide to power off\"\n        duration={1500}\n        onPowerOff={() => setPoweredOff(true)}\n      />\n    </div>\n  )\n}\n\nexport default PowerOffSlideDemo\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/PowerOffSlideDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/power-off-slide"
+  ]
+}

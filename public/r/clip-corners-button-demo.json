@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "clip-corners-button-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/ClipCornersButtonDemo.tsx",
+      "content": "import ClipCornersButton from \"@/components/ottoui/ui/ClipCornersButton\"\n\nexport default function ClipCornersButtonDemo() {\n  return (\n    <div className=\"flex min-h-[200px] flex-col items-center justify-center gap-6\">\n      <ClipCornersButton>CLIP-CORNERS</ClipCornersButton>\n    </div>\n  )\n}\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/ClipCornersButtonDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/clip-corners-button"
+  ]
+}

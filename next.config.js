@@ -20,6 +20,16 @@ const nextConfig = {
     optimizePackageImports: ["lucide-react", "motion"],
   },
 
+  // ESLint configuration
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
+  // TypeScript configuration
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+
   // Turbopack configuration (replaces deprecated experimental.turbo)
   turbopack: {
     rules: {

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dot-morph-button-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/DotMorphButtonDemo.tsx",
+      "content": "import DotMorphButton from \"@/components/ottoui/ui/DotMorphButton\"\n\nexport default function DotMorphButtonDemo() {\n  return (\n    <div className=\"flex min-h-[200px] flex-col items-center justify-center gap-6\">\n      <DotMorphButton label=\"Dot-Morph\" />\n    </div>\n  )\n}\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/DotMorphButtonDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/dot-morph-button"
+  ]
+}

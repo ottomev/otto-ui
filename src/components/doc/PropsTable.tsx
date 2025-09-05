@@ -19,7 +19,7 @@ interface PropDefinition {
   description?: string
   required?: boolean
   fields?: FieldDefinition[]
-  default?: string
+  default?: string | number | boolean | object
 }
 
 interface PropsTableProps {
@@ -114,7 +114,7 @@ const PropsTable: React.FC<PropsTableProps> = ({ props }) => (
               <td className="text-muted-foreground rounded-r-xl px-4 py-3 align-top font-mono text-xs">
                 {prop.default !== undefined ? (
                   <span className="bg-background rounded-full border px-3 py-1">
-                    {prop.default}
+                    {typeof prop.default === 'object' ? JSON.stringify(prop.default) : String(prop.default)}
                   </span>
                 ) : (
                   <span className="text-muted-foreground">-</span>

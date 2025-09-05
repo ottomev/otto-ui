@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "matrix-card-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/MatrixCardDemo.tsx",
+      "content": "\"use client\"\n\nimport React from \"react\"\n\nimport MatrixCard from \"@/components/ottoui/ui/MatrixCard\"\n\nconst MatrixCardDemo = () => {\n  return (\n    <MatrixCard\n      title=\"Matrix Rain Card\"\n      description=\"Hover or hold to see the matrix rain effect!\"\n      fontSize={16}\n    />\n  )\n}\n\nexport default MatrixCardDemo\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/MatrixCardDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/matrix-card"
+  ]
+}

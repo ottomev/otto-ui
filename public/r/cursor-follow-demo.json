@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cursor-follow-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/CursorFollowDemo.tsx",
+      "content": "\"use client\"\n\nimport React from \"react\"\n\nimport CursorFollow from \"../ui/CursorFollow\"\n\nconst images = [\n  {\n    src: \"https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80\",\n    label: \"A beautiful forest probando el largo limite del texto\",\n  },\n  {\n    src: \"https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80\",\n    label: \"Mountain at sunset\",\n  },\n]\n\nconst CursorFollowDemo = () => {\n  return (\n    <CursorFollow>\n      <div className=\"flex flex-row items-center justify-center gap-8 py-8\">\n        {images.map((img, i) => (\n          <div key={i} className=\"flex flex-col items-center\">\n            <img\n              src={img.src}\n              alt={img.label}\n              data-cursor-text={img.label}\n              className=\"border-background h-48 w-48 rounded-xl object-cover transition-transform duration-200 hover:scale-105\"\n              style={{ cursor: \"none\" }}\n            />\n          </div>\n        ))}\n      </div>\n    </CursorFollow>\n  )\n}\n\nexport default CursorFollowDemo\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/CursorFollowDemo.tsx"
+    }
+  ]
+}

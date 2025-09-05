@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "app-download-stack-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/AppDownloadStackDemo.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport AppDownloadStack, {\n  AppData,\n} from \"@/components/ottoui/ui/AppDownloadStack\"\n\nconst demoApps: AppData[] = [\n  {\n    id: 1,\n    name: \"GitHub\",\n    icon: \"https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/9c9721583ecba33e59ebcebdca2248fd_Mmr12FRh5V.png\",\n  },\n  {\n    id: 2,\n    name: \"Canary\",\n    icon: \"https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/b47f43e02f04563447fa90d4ff6c8943_9KzW5GTggQ.png\",\n  },\n  {\n    id: 3,\n    name: \"Figma\",\n    icon: \"https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/f0b9cdefa67b57eeb080278c2f6984cc_sCqUJBg6Qq.png\",\n  },\n  {\n    id: 4,\n    name: \"Arc\",\n    icon: \"https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/178c7b02003c933e6b5afe98bbee595b_low_res_Arc_Browser.png\",\n  },\n]\n\nconst AppDownloadStackDemo = () => {\n  const [selected, setSelected] = useState<number[]>([])\n  const [expanded, setExpanded] = useState(false)\n\n  return (\n    <AppDownloadStack\n      apps={demoApps}\n      title=\"Starter Mac\"\n      selectedApps={selected}\n      onChange={setSelected}\n      isExpanded={expanded}\n      onExpandChange={setExpanded}\n      onDownload={(selected) => alert(`Download apps: ${selected.join(\", \")}`)}\n    />\n  )\n}\n\nexport default AppDownloadStackDemo\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/AppDownloadStackDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/app-download-stack"
+  ]
+}

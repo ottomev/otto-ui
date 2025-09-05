@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "reveal-text-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/RevealTextDemo.tsx",
+      "content": "\"use client\"\n\nimport RevealText from \"@/components/ottoui/ui/RevealText\"\n\nexport default function RevealTextDemo() {\n  return (\n    <div className=\"relative max-w-md space-y-6\">\n      <div>\n        <RevealText>Reveal text with fade/slide!</RevealText>\n        <div>\n          <RevealText direction=\"left\" className=\"text-brand text-lg font-bold\">\n            Slide in from left\n          </RevealText>\n        </div>\n        <div>\n          <RevealText delay={500} className=\"text-2xl font-semibold\">\n            Delayed reveal\n          </RevealText>\n        </div>\n        <div style={{ height: 100 }} />\n        <RevealText triggerOnView className=\"text-xl font-bold\">\n          This reveals when in view\n        </RevealText>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/RevealTextDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/reveal-text"
+  ]
+}

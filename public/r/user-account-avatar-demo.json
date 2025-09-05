@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "user-account-avatar-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/UserAccountAvatarDemo.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport UserAccountAvatar, {\n  Order,\n  UserData,\n} from \"@/components/ottoui/ui/UserAccountAvatar\"\n\nconst demoUser: UserData = {\n  name: \"Jane Doe\",\n  email: \"jane@example.com\",\n  avatar: \"https://github.com/educlopez.png\",\n}\n\nconst demoOrders: Order[] = [\n  { id: \"ORD100\", date: \"2024-06-01\", status: \"delivered\", progress: 100 },\n  { id: \"ORD101\", date: \"2024-06-10\", status: \"shipped\", progress: 60 },\n]\n\nconst UserAccountAvatarDemo = () => {\n  const [user, setUser] = useState<UserData>(demoUser)\n  const [orders] = useState<Order[]>(demoOrders)\n\n  return (\n    <UserAccountAvatar\n      user={user}\n      orders={orders}\n      onProfileSave={(updated) => {\n        setUser(updated)\n        alert(`Profile saved: ${updated.name} (${updated.email})`)\n      }}\n      onOrderView={(orderId) => alert(`View order: ${orderId}`)}\n    />\n  )\n}\n\nexport default UserAccountAvatarDemo\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/UserAccountAvatarDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/user-account-avatar"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "apple-invites-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/AppleInvitesDemo.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport AppleInvites, { Event } from \"@/components/ottoui/ui/AppleInvites\"\n\nconst demoEvents: Event[] = [\n  {\n    id: 1,\n    title: \"Yoga\",\n    subtitle: \"Sat, June 14, 6:00 AM\",\n    location: \"Central Park\",\n    image:\n      \"https://images.unsplash.com/photo-1593164842264-854604db2260?=jpg&fit=crop&w=640&q=80&fit=max\",\n    badge: \"Hosting\",\n    participants: [{ avatar: \"https://github.com/educlopez.png\" }],\n  },\n  {\n    id: 2,\n    title: \"Tyler Turns 3!\",\n    subtitle: \"Sat, June 14, 3:00 PM\",\n    location: \"Central Park\",\n    image:\n      \"https://images.unsplash.com/photo-1524293568345-75d62c3664f7?=jpg&fit=crop&w=640&q=80&fit=max\",\n    badge: \"Going\",\n    participants: [{ avatar: \"https://github.com/educlopez.png\" }],\n  },\n  {\n    id: 3,\n    title: \"Golf party\",\n    subtitle: \"Sun, April 15, 9:00 AM\",\n    location: \"Golf Park\",\n    image:\n      \"https://images.unsplash.com/photo-1592919505780-303950717480?=jpg&fit=crop&w=640&q=80&fit=max\",\n    badge: \"Going\",\n    participants: [{ avatar: \"https://github.com/educlopez.png\" }],\n  },\n  {\n    id: 4,\n    title: \"Movie Night\",\n    subtitle: \"Fri, June 20, 8:00 PM\",\n    location: \"Cine Town\",\n    image:\n      \"https://images.unsplash.com/photo-1571947453052-1e72ce0d19b9?=jpg&fit=crop&w=640&q=80&fit=max\",\n    badge: \"Interested\",\n    participants: [{ avatar: \"https://github.com/educlopez.png\" }],\n  },\n]\n\nconst AppleInvitesDemo = () => {\n  const [activeIndex, setActiveIndex] = useState(0)\n  return (\n    <AppleInvites\n      events={demoEvents}\n      activeIndex={activeIndex}\n      onChange={setActiveIndex}\n    />\n  )\n}\n\nexport default AppleInvitesDemo\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/AppleInvitesDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/apple-invites"
+  ]
+}

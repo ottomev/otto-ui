@@ -1,9 +1,7 @@
-// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const fs = require("fs")
-// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const path = require("path")
-
-// @ts-ignore
 const baseDir = path.join(__dirname, "..", "components", "ottoui")
 const componentsDir = path.join(baseDir, "ui")
 const examplesDir = path.join(baseDir, "examples")
@@ -29,7 +27,7 @@ interface RegistryItem {
   dependencies?: string[]
   component?: string
   devDependencies?: string[]
-  tailwind?: string
+  tailwind?: unknown
 }
 
 function findHookImports(sourceCode: string): string[] {
@@ -58,6 +56,7 @@ function findComponentImports(sourceCode: string): string[] {
   let match
 
   while ((match = componentImportRegex.exec(sourceCode)) !== null) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [_, importStatement, type, componentPath] = match
 
     // Handle the path for all imports from this line
@@ -87,6 +86,7 @@ function findDynamicComponentImports(sourceCode: string): string[] {
   let match
 
   while ((match = dynamicImportRegex.exec(sourceCode)) !== null) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [_, type, componentPath] = match
     const componentName = componentPath
       .replace(/\.(ts|tsx)$/, "")
@@ -112,6 +112,7 @@ function findExternalDependencies(sourceCode: string): string[] {
   let match
 
   while ((match = externalImportRegex.exec(sourceCode)) !== null) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [_, importPath] = match
     // Get the package name (everything before any / character)
     const packageName = importPath.split("/").slice(0, 2).join("/")
@@ -141,7 +142,7 @@ function findUtilImports(sourceCode: string): string[] {
   return utils
 }
 
-function getAdditionalConfig(filePath: string): any {
+function getAdditionalConfig(filePath: string): Record<string, unknown> | null {
   const dir = path.dirname(filePath)
   const baseName = path.basename(filePath, path.extname(filePath))
   const configPath = path.join(dir, `${baseName}.json`)
@@ -160,7 +161,7 @@ function generateRegistryItem(
   filePath: string,
   type: "ui" | "example" | "hook" | "util",
   allHooks: Record<string, string>
-  // @ts-ignore
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
 ): RegistryItem | null {
   // Get the relative path from the components or examples directory
   const baseDirectory =
@@ -314,8 +315,8 @@ function generateRegistryItem(
   const additionalConfig = getAdditionalConfig(filePath)
 
   // Add additional dependencies if they exist
-  if (additionalConfig?.additionalDependencies) {
-    additionalConfig.additionalDependencies.forEach((dep: string) => {
+  if (additionalConfig && 'additionalDependencies' in additionalConfig && Array.isArray(additionalConfig.additionalDependencies)) {
+    (additionalConfig.additionalDependencies as string[]).forEach((dep: string) => {
       externalDeps.add(dep)
     })
   }
@@ -338,17 +339,17 @@ function generateRegistryItem(
         return `@ottoui/${depName}`
       }),
     }),
-    ...(externalDeps.size > 0 || additionalConfig?.devDependencies
+    ...(externalDeps.size > 0 || (additionalConfig && 'devDependencies' in additionalConfig)
       ? {
           dependencies: [
             ...Array.from(externalDeps),
-            ...(additionalConfig?.devDependencies || []),
+            ...((additionalConfig && Array.isArray(additionalConfig.devDependencies) ? additionalConfig.devDependencies : []) as string[]),
           ],
         }
-      : null),
-    ...(additionalConfig?.tailwind && {
-      tailwind: additionalConfig.tailwind,
-    }),
+      : {}),
+    ...(additionalConfig && 'tailwind' in additionalConfig && additionalConfig.tailwind
+      ? { tailwind: additionalConfig.tailwind }
+      : {}),
     ...(type !== "hook" &&
       type !== "util" && {
         component: `React.lazy(\n      () => import('${importPathWithoutExt}') \n)`,
@@ -364,7 +365,7 @@ function buildHooksMap(): Record<string, string> {
   function traverseHooks(dir: string) {
     const files = fs.readdirSync(dir)
 
-    files.forEach((file: any) => {
+    files.forEach((file: string) => {
       const filePath = path.join(dir, file)
       const stat = fs.statSync(filePath)
 
@@ -458,14 +459,13 @@ fs.writeFileSync(path.join(baseDir, "index.ts"), formattedContent)
 console.log("Registry file generated successfully!")
 
 // Create a clean version of the registry for JSON
-function createCleanRegistry(registry: any) {
-  const cleanRegistry = { ...registry }
+function createCleanRegistry(registry: Record<string, RegistryItem>): Record<string, unknown> {
+  const cleanRegistry: Record<string, unknown> = {}
 
   // Remove React.lazy components from all entries
-  Object.values(cleanRegistry).forEach((item: any) => {
-    if (item.component) {
-      delete item.component
-    }
+  Object.entries(registry).forEach(([key, item]) => {
+    const { component, ...rest } = item
+    cleanRegistry[key] = rest
   })
 
   return cleanRegistry
@@ -491,12 +491,16 @@ fs.writeFileSync(
 
 // Generate registry.json for search functionality
 const registryItems = Object.entries(cleanRegistry).map(
-  ([name, item]: [string, any]) => ({
-    name,
-    type: item.type,
-    description: `Otto UI ${item.type.replace("registry:", "")} component`,
-    href: `https://ottoui.dev/r/${name}.json`,
-  })
+  ([name, item]) => {
+    const typedItem = item as { type?: string }
+    const itemType = typedItem.type || "registry:ui"
+    return {
+      name,
+      type: itemType,
+      description: `Otto UI ${itemType.replace("registry:", "")} component`,
+      href: `https://ottoui.dev/r/${name}.json`,
+    }
+  }
 )
 
 const registryIndex = {

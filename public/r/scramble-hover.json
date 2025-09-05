@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scramble-hover",
+  "type": "registry:ui",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "ottoui/ScrambleHover.tsx",
+      "content": "import React, { useRef, useState } from \"react\"\n\ninterface ScrambleHoverProps {\n  children: string\n  duration?: number // total animation duration in ms\n  speed?: number // interval between scrambles in ms\n  className?: string\n}\n\nconst CHARACTERS =\n  \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=<>?\".split(\n    \"\"\n  )\n\nfunction scrambleText(original: string) {\n  return original\n    .split(\"\")\n    .map((char) =>\n      char === \" \"\n        ? \" \"\n        : CHARACTERS[Math.floor(Math.random() * CHARACTERS.length)]\n    )\n    .join(\"\")\n}\n\nconst ScrambleHover: React.FC<ScrambleHoverProps> = ({\n  children,\n  duration = 600,\n  speed = 30,\n  className = \"\",\n}) => {\n  const [display, setDisplay] = useState(children)\n  const timeoutRef = useRef<NodeJS.Timeout | null>(null)\n  const intervalRef = useRef<NodeJS.Timeout | null>(null)\n\n  const handleMouseEnter = () => {\n    let elapsed = 0\n    if (intervalRef.current) clearInterval(intervalRef.current)\n    if (timeoutRef.current) clearTimeout(timeoutRef.current)\n    intervalRef.current = setInterval(() => {\n      setDisplay((prev) => scrambleText(children))\n      elapsed += speed\n    }, speed)\n    timeoutRef.current = setTimeout(() => {\n      if (intervalRef.current) clearInterval(intervalRef.current)\n      setDisplay(children)\n    }, duration)\n  }\n\n  const handleMouseLeave = () => {\n    if (intervalRef.current) clearInterval(intervalRef.current)\n    if (timeoutRef.current) clearTimeout(timeoutRef.current)\n    setDisplay(children)\n  }\n\n  return (\n    <span\n      className={className}\n      style={{ cursor: \"pointer\", display: \"inline-block\" }}\n      onMouseEnter={handleMouseEnter}\n      onMouseLeave={handleMouseLeave}\n    >\n      {display}\n    </span>\n  )\n}\n\nexport default ScrambleHover\n",
+      "type": "registry:ui",
+      "target": "components/ottoui/ui/ScrambleHover.tsx"
+    }
+  ]
+}

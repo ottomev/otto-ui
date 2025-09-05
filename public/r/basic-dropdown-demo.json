@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "basic-dropdown-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/BasicDropdownDemo.tsx",
+      "content": "\"use client\"\n\nimport React from \"react\"\n\nimport BasicDropdown from \"@/components/ottoui/ui/BasicDropdown\"\n\nconst items = [\n  { id: 1, label: \"Small\" },\n  { id: 2, label: \"Medium\" },\n  { id: 3, label: \"Large\" },\n  { id: 4, label: \"Extra Large\" },\n]\n\nconst DropdownDemo = () => {\n  return (\n    <div className=\"flex w-full max-w-xs flex-col gap-4 p-8\">\n      <h3 className=\"text-lg font-medium\">Select a size</h3>\n      <BasicDropdown\n        label=\"Choose a size\"\n        items={items}\n        onChange={(item) => console.log(\"Selected:\", item.label)}\n      />\n    </div>\n  )\n}\n\nexport default DropdownDemo\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/BasicDropdownDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/basic-dropdown"
+  ]
+}

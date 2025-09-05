@@ -35,8 +35,12 @@ const BOUNCE_VARIANTS = {
   "idle-ring": 0.5,
 } as const
 
+interface CustomVariant {
+  nextView?: string
+}
+
 const variants = {
-  exit: (transition: any, custom: any) => {
+  exit: (transition: unknown, custom: CustomVariant) => {
     // custom is the animation variant, e.g., ANIMATION_VARIANTS[variantKey]
     // We'll pass the target view as custom.nextView
     if (custom && custom.nextView === "idle") {
@@ -48,7 +52,7 @@ const variants = {
       }
     }
     return {
-      ...transition,
+      ...(typeof transition === 'object' && transition ? transition as Record<string, unknown> : {}),
       opacity: [1, 0],
       filter: "blur(5px)",
     }

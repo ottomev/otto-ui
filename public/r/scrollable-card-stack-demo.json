@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scrollable-card-stack-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/ScrollableCardStackDemo.tsx",
+      "content": "\"use client\"\n\nimport ScrollableCardStack from \"../ui/ScrollableCardStack\"\n\nexport default function ScrollableCardStackDemo() {\n  const cardData = [\n    {\n      id: \"siriorb\",\n      name: \"Edu Calvo\",\n      handle: \"@educalvolpz\",\n      avatar: \"https://github.com/educlopez.png\",\n      video:\n        \"https://res.cloudinary.com/dyzxnud9z/video/upload/ottoui/siriorb.mp4\",\n      href: \"https://x.com/educalvolpz\",\n    },\n    {\n      id: \"richpopover\",\n      name: \"Edu Calvo\",\n      handle: \"@educalvolpz\",\n      avatar: \"https://github.com/educlopez.png\",\n      video:\n        \"https://res.cloudinary.com/dyzxnud9z/video/upload/ottoui/richpopover.mp4\",\n      href: \"https://x.com/educalvolpz\",\n    },\n    {\n      id: \"sparkbites\",\n      name: \"Edu Calvo\",\n      handle: \"@educalvolpz\",\n      avatar: \"https://github.com/educlopez.png\",\n      video:\n        \"https://res.cloudinary.com/dyzxnud9z/video/upload/ottoui/sparkbites.mp4\",\n      href: \"https://x.com/educalvolpz\",\n    },\n    {\n      id: \"svgl\",\n      name: \"Pheralb\",\n      handle: \"@pheralb\",\n      avatar: \"https://github.com/pheralb.png\",\n      video:\n        \"https://res.cloudinary.com/dyzxnud9z/video/upload/ottoui/svgl.mp4\",\n      href: \"https://x.com/pheralb\",\n    },\n  ]\n\n  return (\n    <div className=\"mx-auto w-full max-w-md\">\n      <ScrollableCardStack\n        items={cardData}\n        cardHeight={384}\n        perspective={1200}\n        transitionDuration={200}\n        className=\"mx-auto\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/ScrollableCardStackDemo.tsx"
+    }
+  ]
+}

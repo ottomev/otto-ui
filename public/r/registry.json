@@ -1,0 +1,451 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "ottoui",
+  "homepage": "https://ottoui.dev",
+  "items": [
+    {
+      "name": "ai-branch",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/ai-branch.json"
+    },
+    {
+      "name": "ai-input",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/ai-input.json"
+    },
+    {
+      "name": "animated-input",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/animated-input.json"
+    },
+    {
+      "name": "animated-progress-bar",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/animated-progress-bar.json"
+    },
+    {
+      "name": "animated-tags",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/animated-tags.json"
+    },
+    {
+      "name": "app-download-stack",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/app-download-stack.json"
+    },
+    {
+      "name": "apple-invites",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/apple-invites.json"
+    },
+    {
+      "name": "basic-accordion",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/basic-accordion.json"
+    },
+    {
+      "name": "basic-dropdown",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/basic-dropdown.json"
+    },
+    {
+      "name": "basic-modal",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/basic-modal.json"
+    },
+    {
+      "name": "basic-toast",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/basic-toast.json"
+    },
+    {
+      "name": "button-copy",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/button-copy.json"
+    },
+    {
+      "name": "clip-corners-button",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/clip-corners-button.json"
+    },
+    {
+      "name": "cursor-follow",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/cursor-follow.json"
+    },
+    {
+      "name": "dot-morph-button",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/dot-morph-button.json"
+    },
+    {
+      "name": "dynamic-island",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/dynamic-island.json"
+    },
+    {
+      "name": "expandable-cards",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/expandable-cards.json"
+    },
+    {
+      "name": "fluid-morph",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/fluid-morph.json"
+    },
+    {
+      "name": "image-metadata-preview",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/image-metadata-preview.json"
+    },
+    {
+      "name": "interactive-image-selector",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/interactive-image-selector.json"
+    },
+    {
+      "name": "job-listing-component",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/job-listing-component.json"
+    },
+    {
+      "name": "matrix-card",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/matrix-card.json"
+    },
+    {
+      "name": "number-flow",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/number-flow.json"
+    },
+    {
+      "name": "phototab",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/phototab.json"
+    },
+    {
+      "name": "power-off-slide",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/power-off-slide.json"
+    },
+    {
+      "name": "reveal-text",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/reveal-text.json"
+    },
+    {
+      "name": "rich-popover",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/rich-popover.json"
+    },
+    {
+      "name": "scramble-hover",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/scramble-hover.json"
+    },
+    {
+      "name": "scroll-reveal-paragraph",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/scroll-reveal-paragraph.json"
+    },
+    {
+      "name": "scrollable-card-stack",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/scrollable-card-stack.json"
+    },
+    {
+      "name": "siri-orb",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/siri-orb.json"
+    },
+    {
+      "name": "social-selector",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/social-selector.json"
+    },
+    {
+      "name": "typewriter-text",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/typewriter-text.json"
+    },
+    {
+      "name": "user-account-avatar",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/user-account-avatar.json"
+    },
+    {
+      "name": "wave-text",
+      "type": "registry:ui",
+      "description": "Otto UI ui component",
+      "href": "https://ottoui.dev/r/wave-text.json"
+    },
+    {
+      "name": "ai-branch-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/ai-branch-demo.json"
+    },
+    {
+      "name": "ai-input-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/ai-input-demo.json"
+    },
+    {
+      "name": "animated-input-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/animated-input-demo.json"
+    },
+    {
+      "name": "animated-progress-bar-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/animated-progress-bar-demo.json"
+    },
+    {
+      "name": "animated-tags-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/animated-tags-demo.json"
+    },
+    {
+      "name": "app-download-stack-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/app-download-stack-demo.json"
+    },
+    {
+      "name": "apple-invites-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/apple-invites-demo.json"
+    },
+    {
+      "name": "basic-accordion-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/basic-accordion-demo.json"
+    },
+    {
+      "name": "basic-dropdown-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/basic-dropdown-demo.json"
+    },
+    {
+      "name": "basic-modal-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/basic-modal-demo.json"
+    },
+    {
+      "name": "basic-toast-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/basic-toast-demo.json"
+    },
+    {
+      "name": "button-copy-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/button-copy-demo.json"
+    },
+    {
+      "name": "clip-corners-button-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/clip-corners-button-demo.json"
+    },
+    {
+      "name": "cursor-follow-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/cursor-follow-demo.json"
+    },
+    {
+      "name": "dot-morph-button-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/dot-morph-button-demo.json"
+    },
+    {
+      "name": "dynamic-island-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/dynamic-island-demo.json"
+    },
+    {
+      "name": "expandable-cards-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/expandable-cards-demo.json"
+    },
+    {
+      "name": "fluid-morph-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/fluid-morph-demo.json"
+    },
+    {
+      "name": "image-metadata-preview-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/image-metadata-preview-demo.json"
+    },
+    {
+      "name": "interactive-image-selector-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/interactive-image-selector-demo.json"
+    },
+    {
+      "name": "job-listing-component-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/job-listing-component-demo.json"
+    },
+    {
+      "name": "matrix-card-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/matrix-card-demo.json"
+    },
+    {
+      "name": "number-flow-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/number-flow-demo.json"
+    },
+    {
+      "name": "phototab-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/phototab-demo.json"
+    },
+    {
+      "name": "power-off-slide-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/power-off-slide-demo.json"
+    },
+    {
+      "name": "reveal-text-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/reveal-text-demo.json"
+    },
+    {
+      "name": "rich-popover-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/rich-popover-demo.json"
+    },
+    {
+      "name": "scramble-hover-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/scramble-hover-demo.json"
+    },
+    {
+      "name": "scroll-reveal-paragraph-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/scroll-reveal-paragraph-demo.json"
+    },
+    {
+      "name": "scrollable-card-stack-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/scrollable-card-stack-demo.json"
+    },
+    {
+      "name": "siri-orb-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/siri-orb-demo.json"
+    },
+    {
+      "name": "social-selector-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/social-selector-demo.json"
+    },
+    {
+      "name": "typewriter-text-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/typewriter-text-demo.json"
+    },
+    {
+      "name": "user-account-avatar-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/user-account-avatar-demo.json"
+    },
+    {
+      "name": "wave-text-demo",
+      "type": "registry:block",
+      "description": "Otto UI block component",
+      "href": "https://ottoui.dev/r/wave-text-demo.json"
+    },
+    {
+      "name": "use-click-outside",
+      "type": "registry:hook",
+      "description": "Otto UI hook component",
+      "href": "https://ottoui.dev/r/use-click-outside.json"
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "description": "Otto UI hook component",
+      "href": "https://ottoui.dev/r/use-mobile.json"
+    },
+    {
+      "name": "use-cursor-position",
+      "type": "registry:hook",
+      "description": "Otto UI hook component",
+      "href": "https://ottoui.dev/r/use-cursor-position.json"
+    },
+    {
+      "name": "cn",
+      "type": "registry:lib",
+      "description": "Otto UI lib component",
+      "href": "https://ottoui.dev/r/cn.json"
+    }
+  ]
+}

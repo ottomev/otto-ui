@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typewriter-text-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/TypewriterTextDemo.tsx",
+      "content": "\"use client\"\n\nimport TypewriterText from \"@/components/ottoui/ui/TypewriterText\"\n\nexport default function TypewriterTextDemo() {\n  return (\n    <div className=\"relative max-w-md space-y-6\">\n      <div>\n        <TypewriterText>Typewriter effect for your text!</TypewriterText>\n        <div>\n          <TypewriterText speed={100} className=\"text-brand font-mono text-lg\">\n            Slower typing speed example\n          </TypewriterText>\n        </div>\n        <div>\n          <TypewriterText loop className=\"text-2xl font-semibold\">\n            This will loop forever!\n          </TypewriterText>\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/TypewriterTextDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/typewriter-text"
+  ]
+}

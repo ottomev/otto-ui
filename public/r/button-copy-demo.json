@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-copy-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/ButtonCopyDemo.tsx",
+      "content": "\"use client\"\n\nimport React from \"react\"\n\nimport ButtonCopy from \"@/components/ottoui/ui/ButtonCopy\"\n\nconst ButtonCopyDemo = () => {\n  return (\n    <ButtonCopy\n      onCopy={async () => {\n        await navigator.clipboard.writeText(\"Hello from ButtonCopy!\")\n      }}\n    />\n  )\n}\n\nexport default ButtonCopyDemo\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/ButtonCopyDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/button-copy"
+  ]
+}

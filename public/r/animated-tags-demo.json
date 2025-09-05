@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-tags-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/AnimatedTagsDemo.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport AnimatedTags from \"@/components/ottoui/ui/AnimatedTags\"\n\nconst initialTags = [\n  \"react\",\n  \"tailwindcss\",\n  \"javascript\",\n  \"typescript\",\n  \"nextjs\",\n]\n\nconst AnimatedTagsDemo = () => {\n  const [selected, setSelected] = useState<string[]>([])\n  return (\n    <div>\n      <AnimatedTags\n        initialTags={initialTags}\n        selectedTags={selected}\n        onChange={setSelected}\n      />\n    </div>\n  )\n}\n\nexport default AnimatedTagsDemo\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/AnimatedTagsDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/animated-tags"
+  ]
+}

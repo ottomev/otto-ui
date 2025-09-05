@@ -2,6 +2,15 @@
 
 import { useEffect, useRef } from "react"
 
+interface PerformanceEventTiming extends PerformanceEntry {
+  processingStart: number
+}
+
+interface LayoutShift extends PerformanceEntry {
+  value: number
+  hadRecentInput: boolean
+}
+
 interface PerformanceMetrics {
   fcp: number | null
   lcp: number | null
@@ -57,7 +66,7 @@ export function PerformanceMonitor() {
       entries.forEach((entry) => {
         // Use the correct Performance API properties for FID
         if ("processingStart" in entry && "startTime" in entry) {
-          const processingStart = (entry as any).processingStart
+          const processingStart = (entry as PerformanceEventTiming).processingStart
           const startTime = entry.startTime
           if (processingStart && startTime) {
             metricsRef.current.fid = processingStart - startTime
@@ -70,9 +79,9 @@ export function PerformanceMonitor() {
     // Cumulative Layout Shift
     const clsObserver = new PerformanceObserver((list) => {
       let clsValue = 0
-      list.getEntries().forEach((entry: any) => {
-        if (!entry.hadRecentInput) {
-          clsValue += entry.value
+      list.getEntries().forEach((entry) => {
+        if ('hadRecentInput' in entry && !(entry as LayoutShift).hadRecentInput) {
+          clsValue += (entry as LayoutShift).value
         }
       })
       metricsRef.current.cls = clsValue
@@ -134,8 +143,16 @@ export function PerformanceMonitor() {
 
     const monitorResources = () => {
       // Monitor memory usage
-      if ((performance as any).memory) {
-        const memory = (performance as any).memory
+      interface PerformanceWithMemory extends Performance {
+        memory?: {
+          usedJSHeapSize: number
+          totalJSHeapSize: number
+          jsHeapSizeLimit: number
+        }
+      }
+      const perfWithMem = performance as PerformanceWithMemory
+      if (perfWithMem.memory) {
+        const memory = perfWithMem.memory
         console.log("Memory Usage:", {
           used: Math.round(memory.usedJSHeapSize / 1048576) + " MB",
           total: Math.round(memory.totalJSHeapSize / 1048576) + " MB",
@@ -173,6 +190,6 @@ export function PerformanceMonitor() {
 // Add to global types
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void
+    gtag?: (...args: unknown[]) => void
   }
 }

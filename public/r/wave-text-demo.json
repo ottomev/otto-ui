@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "wave-text-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/WaveTextDemo.tsx",
+      "content": "\"use client\"\n\nimport WaveText from \"@/components/ottoui/ui/WaveText\"\n\nexport default function WaveTextDemo() {\n  return (\n    <div className=\"relative max-w-md space-y-6\">\n      <div>\n        <WaveText>Wave animation for your text!</WaveText>\n        <div>\n          <WaveText amplitude={16} className=\"text-brand text-lg font-bold\">\n            Higher amplitude wave\n          </WaveText>\n        </div>\n        <div>\n          <WaveText speed={0.1} className=\"text-2xl font-semibold\">\n            Faster wave speed\n          </WaveText>\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/WaveTextDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/wave-text"
+  ]
+}

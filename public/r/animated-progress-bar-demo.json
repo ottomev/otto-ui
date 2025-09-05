@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-progress-bar-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/AnimatedProgressBarDemo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport AnimatedProgressBar from \"@/components/ottoui/ui/AnimatedProgressBar\"\n\nexport default function AnimatedProgressBarDemo() {\n  const [value, setValue] = useState(40)\n  const [refreshKey, setRefreshKey] = useState(0)\n  return (\n    <div className=\"relative max-w-xs space-y-6\">\n      <AnimatedProgressBar\n        key={refreshKey}\n        value={value}\n        label={`Progress: ${value}%`}\n      />\n      <AnimatedProgressBar\n        key={refreshKey + 1000}\n        value={value}\n        color=\"#22d3ee\"\n        label=\"Custom Color\"\n      />\n      <div className=\"mt-4 flex gap-2\">\n        <button\n          className=\"bg-background text-foreground rounded border px-4 py-2\"\n          onClick={() => setValue((v) => (v >= 100 ? 0 : v + 10))}\n        >\n          Increase\n        </button>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/AnimatedProgressBarDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/animated-progress-bar"
+  ]
+}

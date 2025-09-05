@@ -1,4 +1,4 @@
-// @ts-nocheck
+import React from "react"
 import { codeToHtml } from "@/app/utils/shiki"
 
 type CodeProps = {
@@ -12,4 +12,4 @@ async function Code({ code, lang = "tsx" }: CodeProps) {
   return <div dangerouslySetInnerHTML={{ __html: html }} />
 }
 
-export default Code as unknown as (props: CodeProps) => JSX.Element
+export default Code as unknown as (props: CodeProps) => React.JSX.Element

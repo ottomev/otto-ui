@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "power-off-slide",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "ottoui/PowerOffSlide.tsx",
+      "content": "\"use client\"\n\nimport { RefObject, useRef, useState } from \"react\"\nimport { Power } from \"lucide-react\"\nimport {\n  motion,\n  useAnimation,\n  useAnimationFrame,\n  useMotionValue,\n  useTransform,\n} from \"motion/react\"\n\nexport interface PowerOffSlideProps {\n  onPowerOff?: () => void\n  label?: string\n  className?: string\n  duration?: number\n  disabled?: boolean\n}\n\nexport default function PowerOffSlide({\n  onPowerOff,\n  label = \"Slide to power off\",\n  className = \"\",\n  duration = 2000,\n  disabled = false,\n}: PowerOffSlideProps) {\n  const [isPoweringOff, setIsPoweringOff] = useState(false)\n  const x = useMotionValue(0)\n  const controls = useAnimation()\n  const constraintsRef = useRef(null)\n  const textRef: RefObject<HTMLDivElement | null> = useRef(null)\n\n  const xInput = [0, 164]\n  const opacityOutput = [0, 1]\n  const opacity = useTransform(x, xInput, opacityOutput)\n\n  useAnimationFrame((t) => {\n    const animDuration = duration\n    const progress = (t % animDuration) / animDuration\n    if (textRef.current) {\n      textRef.current.style.setProperty(\"--x\", `${(1 - progress) * 100}%`)\n    }\n  })\n\n  const handleDragEnd = async () => {\n    if (disabled) return\n    const dragDistance = x.get()\n    if (dragDistance > 160) {\n      await controls.start({ x: 168 })\n      setIsPoweringOff(true)\n      if (onPowerOff) onPowerOff()\n      setTimeout(() => {\n        setIsPoweringOff(false)\n        controls.start({ x: 0 })\n        x.set(0)\n      }, duration)\n    } else {\n      controls.start({ x: 0 })\n    }\n  }\n\n  return (\n    <div className={`flex h-auto items-center justify-center ${className}`}>\n      <div className=\"w-56\">\n        {isPoweringOff ? (\n          <div className=\"text-foreground text-center\">\n            <p className=\"mb-2 text-xl font-light\">Shutting down...</p>\n          </div>\n        ) : (\n          <div\n            ref={constraintsRef}\n            className=\"bg-secondary relative h-14 overflow-hidden rounded-full border\"\n          >\n            <div className=\"absolute inset-0 left-8 z-0 flex items-center justify-center overflow-hidden\">\n              <div className=\"text-md loading-shimmer text-foreground relative w-full text-center font-normal select-none\">\n                {label}\n              </div>\n            </div>\n            <motion.div\n              drag={disabled ? false : \"x\"}\n              dragConstraints={{ left: 0, right: 168 }}\n              dragElastic={0}\n              dragMomentum={false}\n              onDragEnd={handleDragEnd}\n              animate={controls}\n              style={{ x }}\n              className={`bg-background absolute top-1 left-1 z-10 flex h-12 w-12 items-center justify-center rounded-full shadow-md ${disabled ? \"cursor-not-allowed opacity-50\" : \"cursor-grab active:cursor-grabbing\"}`}\n              tabIndex={disabled ? -1 : 0}\n              aria-disabled={disabled}\n            >\n              <Power size={32} className=\"text-red-600\" />\n            </motion.div>\n          </div>\n        )}\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/ottoui/ui/PowerOffSlide.tsx"
+    }
+  ]
+}

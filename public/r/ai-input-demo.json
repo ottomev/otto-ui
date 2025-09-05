@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ai-input-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/AiInputDemo.tsx",
+      "content": "\"use client\"\n\nimport { MorphSurface } from \"@/components/ottoui/ui/AiInput\"\n\nexport default function AiInputDemo() {\n  return (\n    <div className=\"flex flex-col items-center space-y-8\">\n      {/* Main Demo */}\n      <div className=\"relative\">\n        <MorphSurface />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/AiInputDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/ai-input"
+  ]
+}

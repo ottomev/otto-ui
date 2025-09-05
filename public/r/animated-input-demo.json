@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-input-demo",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "examples/AnimatedInputDemo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\nimport { User } from \"lucide-react\"\n\nimport AnimatedInput from \"@/components/ottoui/ui/AnimatedInput\"\n\nexport default function AnimatedInputDemo() {\n  const [value, setValue] = useState(\"\")\n  return (\n    <div className=\"max-w-xs space-y-6\">\n      <AnimatedInput\n        label=\"Controlled\"\n        value={value}\n        onChange={setValue}\n        placeholder=\"Type here...\"\n      />\n      <AnimatedInput label=\"Uncontrolled\" defaultValue=\"Hello\" />\n      <AnimatedInput\n        label=\"With Icon\"\n        icon={<User size={20} strokeWidth={1.5} />}\n        placeholder=\"Username\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/AnimatedInputDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/animated-input"
+  ]
+}

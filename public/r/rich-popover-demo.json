@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "rich-popover-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/RichPopoverDemo.tsx",
+      "content": "\"use client\"\n\nimport RichPopover, { YouTubeIcon } from \"@/components/ottoui/ui/RichPopover\"\n\nexport default function RichPopoverDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-6\">\n      <div className=\"max-w-2xl space-y-4 text-base leading-relaxed\">\n        <p className=\"text-muted-foreground\">\n          OpenAI has just announced their latest breakthrough in artificial\n          intelligence\n          <RichPopover\n            trigger={\n              <span className=\"bg-background mx-2 inline-flex size-8 cursor-pointer items-center justify-center rounded-md border align-middle\">\n                <YouTubeIcon className=\"h-4 w-4 fill-red-600\" />\n              </span>\n            }\n            title=\"Introducing GPT-5\"\n            description={\n              '\"GPT-5 features state-of-the-art performance across coding, math, writing assistance, health, visual perception, and more. Use GPT-5 to build websites, create apps, and tap into its improved writing capabilities to help with everyday tasks like reports, emails, and editing.\"'\n            }\n            href=\"https://www.youtube.com/watch?v=boJG84Jcf-4\"\n            actionLabel=\"Watch announcement\"\n            actionHref=\"https://www.youtube.com/watch?v=boJG84Jcf-4\"\n            meta=\"0:00–2:15\"\n          />\n          marking a significant leap forward in AI capabilities. This new model\n          represents the most advanced language model ever created, with\n          unprecedented performance across multiple domains including coding,\n          mathematics, and creative writing.\n        </p>\n        <p className=\"text-muted-foreground\">\n          GPT-5&apos;s enhanced capabilities extend beyond traditional text\n          processing to include improved visual perception and health-related\n          assistance, making it a versatile tool for both professional and\n          personal use. The model is now rolling out to all users, democratizing\n          access to cutting-edge AI technology.\n        </p>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/RichPopoverDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/rich-popover"
+  ]
+}

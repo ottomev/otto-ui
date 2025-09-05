@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "basic-toast-demo",
+  "type": "registry:block",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "examples/BasicToastDemo.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\nimport { AnimatePresence } from \"motion/react\"\n\nimport BasicToast, { ToastType } from \"@/components/ottoui/ui/BasicToast\"\n\nconst BasicToastDemo = () => {\n  const [showToast, setShowToast] = useState(false)\n  const [toastType, setToastType] = useState<ToastType>(\"success\")\n\n  const handleShowToast = (type: ToastType) => {\n    setToastType(type)\n    setShowToast(true)\n  }\n\n  return (\n    <div className=\"flex flex-col gap-4 p-4\">\n      <div className=\"flex flex-wrap gap-2\">\n        <button\n          onClick={() => handleShowToast(\"success\")}\n          className=\"rounded-md bg-emerald-500 px-3 py-1.5 text-sm text-white hover:bg-emerald-600\"\n        >\n          Success Toast\n        </button>\n        <button\n          onClick={() => handleShowToast(\"error\")}\n          className=\"rounded-md bg-red-500 px-3 py-1.5 text-sm text-white hover:bg-red-600\"\n        >\n          Error Toast\n        </button>\n        <button\n          onClick={() => handleShowToast(\"warning\")}\n          className=\"rounded-md bg-amber-500 px-3 py-1.5 text-sm text-white hover:bg-amber-600\"\n        >\n          Warning Toast\n        </button>\n        <button\n          onClick={() => handleShowToast(\"info\")}\n          className=\"rounded-md bg-blue-500 px-3 py-1.5 text-sm text-white hover:bg-blue-600\"\n        >\n          Info Toast\n        </button>\n      </div>\n      <AnimatePresence>\n        {showToast && (\n          <BasicToast\n            message={`This is a ${toastType} message example!`}\n            type={toastType}\n            duration={3000}\n            onClose={() => setShowToast(false)}\n          />\n        )}\n      </AnimatePresence>\n    </div>\n  )\n}\n\nexport default BasicToastDemo\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/BasicToastDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/basic-toast"
+  ]
+}

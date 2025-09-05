@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "interactive-image-selector-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/InteractiveImageSelectorDemo.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport InteractiveImageSelector, {\n  ImageData,\n} from \"@/components/ottoui/ui/InteractiveImageSelector\"\n\nconst demoImages: ImageData[] = [\n  {\n    id: 1,\n    src: \"https://images.unsplash.com/photo-1605478185737-99ae313e940c?=jpg&fit=crop&w=300&q=80&fit=max\",\n  },\n  {\n    id: 2,\n    src: \"https://images.unsplash.com/photo-1564951434112-64d74cc2a2d7?=jpg&fit=crop&w=300&q=80&fit=max\",\n  },\n  {\n    id: 3,\n    src: \"https://images.unsplash.com/photo-1612317248613-c1236be97f6f?=jpg&fit=crop&w=300&q=80&fit=max\",\n  },\n  {\n    id: 4,\n    src: \"https://images.unsplash.com/photo-1603118675111-239b194fb8d8?=jpg&fit=crop&w=300&q=80&fit=max\",\n  },\n  {\n    id: 5,\n    src: \"https://images.unsplash.com/photo-1605478185737-99ae313e940c?=jpg&fit=crop&w=300&q=80&fit=max\",\n  },\n  {\n    id: 6,\n    src: \"https://images.unsplash.com/photo-1564951434112-64d74cc2a2d7?=jpg&fit=crop&w=300&q=80&fit=max\",\n  },\n]\n\nconst InteractiveImageSelectorDemo = () => {\n  const [selected, setSelected] = useState<number[]>([])\n  const [images, setImages] = useState<ImageData[]>(demoImages)\n\n  return (\n    <InteractiveImageSelector\n      images={images}\n      selectedImages={selected}\n      onChange={setSelected}\n      onDelete={(deleted) =>\n        setImages((imgs) => imgs.filter((img) => !deleted.includes(img.id)))\n      }\n      onShare={(selected) => alert(`Share images: ${selected.join(\", \")}`)}\n      title=\"Demo Gallery\"\n      selectable={false}\n    />\n  )\n}\n\nexport default InteractiveImageSelectorDemo\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/InteractiveImageSelectorDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/interactive-image-selector"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "expandable-cards-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/ExpandableCardsDemo.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport ExpandableCards, { Card } from \"@/components/ottoui/ui/ExpandableCards\"\n\nconst demoCards: Card[] = [\n  {\n    id: 1,\n    title: \"Summer Opening\",\n    image:\n      \"https://images.unsplash.com/photo-1572246538688-3f326dca3951?=jpg&fit=crop&w=400&q=80&fit=max\",\n    content:\n      \"Join us for the Summer Opening event, where we celebrate the start of a vibrant season filled with art and culture.\",\n    author: {\n      name: \"Zé Manuel\",\n      role: \"Fundador, Summer Opening\",\n      image: \"https://github.com/educlopez.png\",\n    },\n  },\n  {\n    id: 2,\n    title: \"Fashion\",\n    image:\n      \"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?=jpg&fit=crop&w=400&q=80&fit=max\",\n    content:\n      \"Explore the latest trends in fashion at our exclusive showcase, featuring renowned designers and unique styles.\",\n    author: {\n      name: \"Maria Silva\",\n      role: \"Fashion Curator\",\n      image: \"https://github.com/educlopez.png\",\n    },\n  },\n  {\n    id: 3,\n    title: \"Gallery Art\",\n    image:\n      \"https://images.unsplash.com/photo-1522878308970-972ec5eedc0d?=jpg&fit=crop&w=400&q=80&fit=max\",\n    content:\n      \"Immerse yourself in the world of art at our gallery, showcasing stunning pieces from emerging and established artists.\",\n    author: {\n      name: \"João Santos\",\n      role: \"Gallery Director\",\n      image: \"https://github.com/educlopez.png\",\n    },\n  },\n  {\n    id: 4,\n    title: \"Dreams\",\n    image:\n      \"https://images.unsplash.com/photo-1536893827774-411e1dc7c902?=jpg&fit=crop&w=400&q=80&fit=max\",\n    content:\n      \"Join us on a journey through dreams, exploring the subconscious and the art of dreaming.\",\n    author: {\n      name: \"Ana Rodrigues\",\n      role: \"Dream Interpreter\",\n      image: \"https://github.com/educlopez.png\",\n    },\n  },\n]\n\nconst ExpandableCardsDemo = () => {\n  const [selected, setSelected] = useState<number | null>(null)\n  return (\n    <ExpandableCards\n      cards={demoCards}\n      selectedCard={selected}\n      onSelect={setSelected}\n    />\n  )\n}\n\nexport default ExpandableCardsDemo\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/ExpandableCardsDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/expandable-cards"
+  ]
+}

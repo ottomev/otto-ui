@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "basic-accordion-demo",
+  "type": "registry:block",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "examples/BasicAccordionDemo.tsx",
+      "content": "\"use client\"\n\nimport React from \"react\"\n\nimport BasicAccordion from \"@/components/ottoui/ui/BasicAccordion\"\n\nconst accordionItems = [\n  {\n    id: 1,\n    title: \"What is an animated accordion?\",\n    content: (\n      <p className=\"text-sm\">\n        An accordion is a vertically stacked set of interactive headings that\n        expand/collapse to reveal content. The animated version adds smooth\n        transitions between states, improving user experience.\n      </p>\n    ),\n  },\n  {\n    id: 2,\n    title: \"How to use this component?\",\n    content: (\n      <div className=\"space-y-2 text-sm\">\n        <p>\n          Import the component and provide an array of items with{\" \"}\n          <code>id</code>, <code>title</code>, and <code>content</code>. You can\n          also customize behavior with props like <code>allowMultiple</code> and{\" \"}\n          <code>defaultExpandedIds</code>.\n        </p>\n        <pre className=\"bg-primary rounded border p-2\">\n          {`<BasicAccordion\n  items={accordionItems}\n  allowMultiple={true}\n  defaultExpandedIds={[1]}\n/>`}\n        </pre>\n      </div>\n    ),\n  },\n  {\n    id: 3,\n    title: \"Is it accessible?\",\n    content: (\n      <p className=\"text-sm\">\n        Yes! The component follows accessibility guidelines by using proper ARIA\n        attributes, supporting keyboard navigation, and maintaining focus\n        properly through interactions.\n      </p>\n    ),\n  },\n]\n\nconst AccordionDemo = () => {\n  return (\n    <div className=\"w-full max-w-xl p-4\">\n      <BasicAccordion\n        items={accordionItems}\n        allowMultiple={true}\n        defaultExpandedIds={[1]}\n        className=\"bg-background border\"\n      />\n    </div>\n  )\n}\n\nexport default AccordionDemo\n",
+      "type": "registry:block",
+      "target": "components/ottoui/examples/BasicAccordionDemo.tsx"
+    }
+  ],
+  "registryDependencies": [
+    "@ottoui/basic-accordion"
+  ]
+}
